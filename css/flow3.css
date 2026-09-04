@@ -246,6 +246,21 @@
   top: -0.4em;
 }
 
+.mini-matchup-preview__change {
+  width: 100%;
+  margin-top: 2px;
+  background: var(--ink-5);
+  color: var(--white-5);
+  border-radius: 3px;
+  padding: 4px 0;
+  text-align: center;
+  font-family: var(--font-wide);
+  font-weight: 700;
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .mini-matchup-preview__vs {
   font-family: var(--font-wide);
   font-weight: 700;
