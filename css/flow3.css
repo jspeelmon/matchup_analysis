@@ -14,6 +14,11 @@
   --ncaa-border: #e3e3e8;
   --ncaa-rail-width: 335px;
   --ncaa-rail-content-width: 300px;
+
+  /* Illustrative-only example matchup colors for the right-rail preview.
+     Not tied to any real team-color token elsewhere in the app. */
+  --team-tenn: #FF8200;
+  --team-gonz: #041E42;
 }
 
 /* ---- NCAA.com article chrome ---- */
@@ -176,9 +181,79 @@
   margin-top: 6px;
 }
 
-.mini-matchup-widget__copy--secondary {
+/* Compact illustrative example-matchup preview. Purely decorative — the
+   real Team 1 / Team 2 selections always start empty when the modal
+   opens, regardless of what's shown here (see js/flow3.js). */
+
+.mini-matchup-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.mini-matchup-preview__team {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.mini-matchup-preview__ring {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--white-5);
+  border: 2px solid var(--gray-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mini-matchup-preview__badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-5);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 11px;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.18);
+}
+
+.mini-matchup-preview__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--ink-5);
+}
+
+.mini-matchup-preview__name sup {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 8px;
   color: var(--gray-0);
-  margin-top: 4px;
+  margin-right: 1px;
+  top: -0.4em;
+}
+
+.mini-matchup-preview__vs {
+  font-family: var(--font-wide);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--gray-0);
+  flex-shrink: 0;
 }
 
 .mini-matchup-widget__cta {

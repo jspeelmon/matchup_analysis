@@ -111,14 +111,32 @@
       </div>
 
       <!-- 2. NEW: compact Matchup Analysis widget (no preset matchup) -->
-      <a href="#" id="mini-matchup-widget" class="mini-matchup-widget" aria-haspopup="dialog" aria-label="Compare two Division I basketball teams with Matchup Analysis">
+      <a href="#" id="mini-matchup-widget" class="mini-matchup-widget" aria-haspopup="dialog" aria-label="Calculate a matchup between two Division I basketball teams with Matchup Analysis">
         <div class="mini-matchup-widget__eyebrow">DI Basketball</div>
         <div class="mini-matchup-widget__title">Matchup Analysis</div>
         <p class="mini-matchup-widget__copy">Compare any two men&rsquo;s or women&rsquo;s Division I basketball teams.</p>
-        <p class="mini-matchup-widget__copy mini-matchup-widget__copy--secondary">Explore records, rankings, and team performance data.</p>
+
+        <!-- Illustrative example only — purely decorative, not a real
+             selection. Clicking anywhere opens the modal with both teams
+             empty (see js/flow3.js openModal()/resetModalState()). -->
+        <div class="mini-matchup-preview" aria-hidden="true">
+          <div class="mini-matchup-preview__team">
+            <span class="mini-matchup-preview__ring" style="border-color:var(--team-tenn);">
+              <span class="mini-matchup-preview__badge" style="background:var(--team-tenn);">T</span>
+            </span>
+            <span class="mini-matchup-preview__name"><sup>1</sup>Tenn</span>
+          </div>
+          <span class="mini-matchup-preview__vs">vs</span>
+          <div class="mini-matchup-preview__team">
+            <span class="mini-matchup-preview__ring" style="border-color:var(--team-gonz);">
+              <span class="mini-matchup-preview__badge" style="background:var(--team-gonz);">GU</span>
+            </span>
+            <span class="mini-matchup-preview__name"><sup>1</sup>Gonzaga</span>
+          </div>
+        </div>
 
         <button type="button" id="mini-matchup-cta" class="mini-matchup-widget__cta">
-          Compare Teams
+          Calculate Matchup
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       </a>
