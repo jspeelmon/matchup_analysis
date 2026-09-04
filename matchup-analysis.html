@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Matchup Analysis — Abilene Christian vs California Baptist | March Madness Live</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-page="matchup-analysis">
+
+<div class="viewport">
+
+  <!-- ============ SCORE TICKER ============ -->
+  <div class="score-ticker text-white text-[12px] py-2">
+    <div class="score-ticker__track">
+      <span class="px-6 flex items-center gap-2 border-r border-white/10"><b class="type-eyebrow text-[10px] text-[#7fd0ff]">FINAL</b> DUKE 76 · UNC 82</span>
+      <span class="px-6 flex items-center gap-2 border-r border-white/10"><b class="type-eyebrow text-[10px] text-[#7fd0ff]">FINAL</b> HOUSTON 71 · PURDUE 68</span>
+      <span class="px-6 flex items-center gap-2 border-r border-white/10"><b class="type-eyebrow text-[10px] text-[#7fd0ff]">FINAL</b> UCONN 89 · ILLINOIS 75</span>
+      <span class="px-6 flex items-center gap-2 border-r border-white/10"><b class="type-eyebrow text-[10px] text-[#7fd0ff]">FINAL</b> ARIZONA 80 · GONZAGA 78</span>
+      <span class="px-6 flex items-center gap-2 border-r border-white/10"><b class="type-eyebrow text-[10px] text-[#7fd0ff]">FINAL</b> DUKE 76 · UNC 82</span>
+      <span class="px-6 flex items-center gap-2 border-r border-white/10"><b class="type-eyebrow text-[10px] text-[#7fd0ff]">FINAL</b> HOUSTON 71 · PURDUE 68</span>
+      <span class="px-6 flex items-center gap-2 border-r border-white/10"><b class="type-eyebrow text-[10px] text-[#7fd0ff]">FINAL</b> UCONN 89 · ILLINOIS 75</span>
+      <span class="px-6 flex items-center gap-2 border-r border-white/10"><b class="type-eyebrow text-[10px] text-[#7fd0ff]">FINAL</b> ARIZONA 80 · GONZAGA 78</span>
+    </div>
+  </div>
+
+  <!-- ============ NCAA / MML NAV ============ -->
+  <div class="mml-nav-lockup">
+    <div class="flex items-center justify-between px-8 h-[56px] border-b border-[#dfdfe7]">
+      <div class="flex items-center gap-3">
+        <div class="w-[30px] h-[30px] rounded-full bg-[#17171d] flex items-center justify-center">
+          <span class="text-white text-[10px] font-bold">NCAA</span>
+        </div>
+        <span class="type-display text-[16px] tracking-tight">March Madness Live<span class="align-super text-[9px]">®</span></span>
+      </div>
+      <a id="back-link" href="flow1.html" class="back-link">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back to MML Home
+      </a>
+    </div>
+    <nav class="flex items-center gap-1 px-8 h-[50px] overflow-x-auto no-scrollbar">
+      <a class="mml-nav-link" href="flow1.html">Home</a>
+      <a class="mml-nav-link mml-nav-link--active" href="#">Bracket Challenge</a>
+      <a class="mml-nav-link" href="#">Watch</a>
+      <a class="mml-nav-link" href="#">Scores</a>
+      <a class="mml-nav-link" href="#">Schedule</a>
+      <a class="mml-nav-link" href="#">News</a>
+      <a class="mml-nav-link" href="#">Bracket IQ</a>
+    </nav>
+  </div>
+
+  <!-- ============ BCG HEADER ============ -->
+  <div class="bg-[#17171d] text-white">
+    <div class="px-8 py-2 flex items-center gap-2 text-[11px] text-white/60">
+      <span class="type-caption text-[10px] text-white/80">NCAA® March Madness® Men's</span>
+      <span>Bracket Challenge Game</span>
+    </div>
+    <div class="px-8 pb-4 flex items-center gap-6">
+      <span class="type-display text-[22px]">My Picks</span>
+      <span class="type-caption text-[12px] text-white/50">Leaderboard</span>
+      <span class="type-caption text-[12px] text-white/50">Groups</span>
+      <span class="type-caption text-[12px] text-white/90 border-b-2 border-white pb-1">Matchup Analysis</span>
+      <span class="type-caption text-[12px] text-white/50">Bracket IQ</span>
+    </div>
+  </div>
+
+  <!-- ============ MATCHUP CONTENT ============ -->
+  <div class="flex justify-center py-10 px-6 bg-[#fafafb]">
+    <div class="w-full max-w-[920px] bg-white border border-[#e3e3e8] rounded-[6px] overflow-hidden">
+
+      <!-- Team lockup header -->
+      <div class="flex items-center justify-between px-10 pt-8 pb-5">
+        <div class="flex flex-col items-center gap-2 w-[180px]">
+          <div class="team-badge" style="width:56px;height:56px;font-size:16px;background:var(--team-cbu);">CBU</div>
+          <div class="flex items-baseline gap-1">
+            <span class="text-[11px] text-[#8f909b]">12</span>
+            <span class="type-display text-[20px]">California Baptist</span>
+          </div>
+          <label class="pick-radio relative inline-flex items-center justify-center w-4 h-4 rounded-full border-2 border-[#17171d] cursor-pointer"></label>
+        </div>
+        <div id="pick-divider" class="flex flex-col items-center gap-2 self-stretch justify-center">
+          <div class="w-px flex-1 bg-[#c1c2ca]"></div>
+          <span id="pick-divider-label" class="type-caption text-[9px] text-[#8f909b] whitespace-nowrap">Make Pick</span>
+          <div class="w-px flex-1 bg-[#c1c2ca]"></div>
+        </div>
+        <div class="flex flex-col items-center gap-2 w-[180px]">
+          <div class="team-badge" style="width:56px;height:56px;font-size:16px;background:var(--team-acu);">ACU</div>
+          <div class="flex items-baseline gap-1">
+            <span class="text-[11px] text-[#8f909b]">12</span>
+            <span class="type-display text-[20px]">Abilene Christian</span>
+          </div>
+          <label class="pick-radio relative inline-flex items-center justify-center w-4 h-4 rounded-full border-2 border-[#17171d] cursor-pointer"></label>
+        </div>
+      </div>
+
+      <div class="h-px bg-[#dfdfe7] mx-10"></div>
+
+      <!-- Tab bar -->
+      <div class="flex border-b-[3px] border-[#dfdfe7] mx-10">
+        <div class="tab-bar__tab tab-bar__tab--active">Matchup Analysis</div>
+        <div class="tab-bar__tab">Overview</div>
+        <div class="tab-bar__tab">Schedule</div>
+      </div>
+
+      <!-- Score hero -->
+      <div class="flex items-center justify-center gap-14 py-8">
+        <div class="flex flex-col items-center gap-1">
+          <span class="type-display text-[30px]" style="color:var(--team-cbu);">39</span>
+          <span class="type-overline text-[8px] text-[#8f909b]">(OUT OF 100)</span>
+        </div>
+        <span class="type-overline text-[11px] text-[#17171d] w-[180px] text-center">Matchup Analysis Score</span>
+        <div class="flex flex-col items-center gap-1">
+          <span class="type-display text-[30px]" style="color:var(--team-acu);">88.4</span>
+          <span class="type-overline text-[8px] text-[#8f909b]">(OUT OF 100)</span>
+        </div>
+      </div>
+
+      <div class="h-px bg-[#c1c2ca] mx-24 opacity-60"></div>
+
+      <!-- Stat rows -->
+      <div class="flex flex-col gap-6 px-10 py-8">
+
+        <div class="flex flex-col gap-1.5">
+          <div class="flex items-center justify-between text-[15px]">
+            <span class="type-display">100</span>
+            <span class="type-overline text-[10px] text-[#464750] flex items-center gap-1">User Pick Pct <span class="text-[#c1c2ca]">ⓘ</span></span>
+            <span class="type-display">100</span>
+          </div>
+          <div class="stat-row-track"><div style="width:100%;background:var(--team-cbu);"></div></div>
+        </div>
+
+        <div class="flex flex-col gap-1.5">
+          <div class="flex items-center justify-between text-[15px]">
+            <span class="type-display">1</span>
+            <span class="type-overline text-[10px] text-[#464750] flex items-center gap-1">Seed <span class="text-[#c1c2ca]">ⓘ</span></span>
+            <span class="type-display">16</span>
+          </div>
+          <div class="stat-row-track"><div style="width:6%;background:var(--team-cbu);"></div><div style="flex:1;background:var(--team-acu);"></div></div>
+        </div>
+
+        <div class="flex flex-col gap-1.5">
+          <div class="flex items-center justify-between text-[15px]">
+            <span class="type-display">100</span>
+            <span class="type-overline text-[10px] text-[#464750] flex items-center gap-1">Overall Winning Pct <span class="text-[#c1c2ca]">ⓘ</span></span>
+            <span class="type-display">100</span>
+          </div>
+          <div class="stat-row-track"><div style="width:100%;background:var(--team-cbu);"></div></div>
+        </div>
+
+        <div class="flex flex-col gap-1.5">
+          <div class="flex items-center justify-between text-[15px]">
+            <span class="type-display">99.9</span>
+            <span class="type-overline text-[10px] text-[#464750] flex items-center gap-1">Opponent Efficiency <span class="text-[#c1c2ca]">ⓘ</span></span>
+            <span class="type-display">99.9</span>
+          </div>
+          <div class="stat-row-track"><div style="width:50%;background:var(--team-cbu);"></div><div style="flex:1;background:var(--team-acu);"></div></div>
+        </div>
+
+        <div class="flex flex-col gap-1.5">
+          <div class="flex items-center justify-between text-[15px]">
+            <span class="type-display">1</span>
+            <span class="type-overline text-[10px] text-[#464750] flex items-center gap-1">Net Ranking <span class="text-[#c1c2ca]">ⓘ</span></span>
+            <span class="type-display">158</span>
+          </div>
+          <div class="stat-row-track"><div style="width:10%;background:var(--team-cbu);"></div><div style="flex:1;background:var(--team-acu);"></div></div>
+        </div>
+
+        <div class="flex flex-col gap-1.5">
+          <div class="flex items-center justify-between text-[15px]">
+            <span class="type-display">99.9</span>
+            <span class="type-overline text-[10px] text-[#464750] flex items-center gap-1">True Shooting Percentage <span class="text-[#c1c2ca]">ⓘ</span></span>
+            <span class="type-display">99.9</span>
+          </div>
+          <div class="stat-row-track"><div style="width:50%;background:var(--team-cbu);"></div><div style="flex:1;background:var(--team-acu);"></div></div>
+        </div>
+
+        <div class="flex justify-center mt-2">
+          <button class="btn-primary" style="padding:12px 48px;">Create Custom Analysis</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div id="entry-toast" class="entry-toast"></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,520 @@
+/* =========================================================================
+   FLOW 3 — NCAA.com Article + Right Rail + Build Your Matchup Modal
+   =========================================================================
+   Scoped entirely to Flow 3 (flow3.html + matchup-analysis-ncaa.html).
+   This file is ADDITIVE ONLY: it must never be linked from flow1.html,
+   flow2.html, or matchup-analysis.html, and it must never redefine a
+   selector already owned by css/styles.css. It reuses the shared design
+   tokens (--ink-5, --gray-*, --font-display, etc.) declared in
+   css/styles.css, which is loaded before this file and is left untouched.
+   ========================================================================= */
+
+:root {
+  --ncaa-muted: #5d5f6b;      /* supporting-text gray from BCG modal reference */
+  --ncaa-border: #e3e3e8;
+  --ncaa-rail-width: 335px;
+  --ncaa-rail-content-width: 300px;
+}
+
+/* ---- NCAA.com article chrome ---- */
+
+.ncaa-topbar {
+  background: var(--ink-5);
+  color: #fff;
+}
+
+.ncaa-wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  text-transform: none;
+}
+
+.ncaa-topbar-link {
+  font-family: var(--font-wide);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  padding: 8px 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.ncaa-topbar-link:hover,
+.ncaa-topbar-link--active {
+  color: #fff;
+  border-bottom-color: var(--accent-blue);
+}
+
+.ncaa-division-pill {
+  font-family: var(--font-wide);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding: 5px 14px;
+  border-radius: 100px;
+  border: 1px solid var(--gray-3);
+}
+
+.ncaa-division-pill--active {
+  background: var(--ink-5);
+  color: #fff;
+  border-color: var(--ink-5);
+}
+
+.ncaa-subtab {
+  font-family: var(--font-wide);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--ink-3);
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.ncaa-subtab--active {
+  color: var(--ink-5);
+  border-bottom-color: var(--ink-5);
+  font-weight: 700;
+}
+
+.ncaa-article-body p + p { margin-top: 16px; }
+
+/* ---- Right rail ---- */
+
+.ncaa-rail {
+  width: var(--ncaa-rail-width);
+  flex-shrink: 0;
+}
+
+.ncaa-rail-ad {
+  width: var(--ncaa-rail-content-width);
+  height: 250px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #eeeef0 0%, #e3e3e8 100%);
+  border: 1px solid var(--gray-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ncaa-rail-nav {
+  width: var(--ncaa-rail-content-width);
+  margin: 24px auto 0;
+}
+
+.ncaa-rail-nav__headline {
+  display: block;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--gray-3);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.3;
+  color: var(--ink-5);
+}
+
+.ncaa-rail-nav__headline:first-child {
+  border-top: 2px solid var(--accent-blue);
+  padding-top: 12px;
+}
+
+.ncaa-rail-nav__headline--muted {
+  font-weight: 600;
+  color: var(--gray-0);
+}
+
+/* ---- Compact Matchup Analysis widget (right-rail, no preset matchup) ---- */
+
+.mini-matchup-widget {
+  width: var(--ncaa-rail-content-width);
+  margin: 24px auto 0;
+  display: block;
+  background: var(--white-5);
+  border: 1px solid var(--gray-3);
+  border-radius: var(--radius-card);
+  padding: 18px 18px 20px;
+  text-align: left;
+  transition: box-shadow 0.2s ease, transform 0.15s ease, border-color 0.15s ease;
+}
+
+.mini-matchup-widget:hover {
+  box-shadow: 0 8px 22px rgba(23, 23, 29, 0.12);
+  transform: translateY(-1px);
+  border-color: var(--gray-2);
+}
+
+.mini-matchup-widget:active { transform: translateY(0); }
+
+.mini-matchup-widget__eyebrow {
+  font-family: var(--font-wide);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+}
+
+.mini-matchup-widget__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--ink-5);
+  margin-top: 3px;
+}
+
+.mini-matchup-widget__copy {
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--ink-3);
+  margin-top: 6px;
+}
+
+.mini-matchup-widget__copy--secondary {
+  color: var(--gray-0);
+  margin-top: 4px;
+}
+
+.mini-matchup-widget__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  margin-top: 16px;
+  background: var(--ink-5);
+  color: var(--white-5);
+  border: none;
+  border-radius: 4px;
+  padding: 11px 0;
+  font-family: var(--font-wide);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.15s ease;
+}
+
+.mini-matchup-widget:hover .mini-matchup-widget__cta { background: #2b2b33; }
+
+/* ---- Modal: Build Your Matchup ---- */
+
+.bym-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(23, 23, 29, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+}
+
+.bym-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.bym-modal {
+  width: 100%;
+  max-width: 600px;
+  max-height: calc(100vh - 48px);
+  /* Intentionally NOT overflow:auto — the Team 1 / Team 2 dropdown panels
+     are absolutely positioned inside .bym-field, and absolutely positioned
+     descendants don't contribute to an ancestor's auto height. Any
+     non-visible overflow here would clip those panels once they extend
+     past the modal's in-flow content height. The modal's own content is
+     short and fixed, so it never needs to scroll internally. */
+  overflow: visible;
+  background: var(--white-5);
+  border-radius: 8px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+  padding: 40px 40px 32px;
+  position: relative;
+  transform: translateY(10px) scale(0.98);
+  transition: transform 0.18s ease;
+}
+
+.bym-overlay.is-open .bym-modal { transform: translateY(0) scale(1); }
+
+.bym-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: var(--gray-0);
+  font-size: 20px;
+  line-height: 1;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.bym-close:hover { background: var(--gray-3); color: var(--ink-5); }
+
+.bym-heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--ink-5);
+  text-align: center;
+}
+
+.bym-subtext {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--ncaa-muted);
+  text-align: center;
+  margin-top: 6px;
+}
+
+/* Men's / Women's toggle */
+
+.bym-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 2px;
+  border: 1.5px solid var(--ink-5);
+  border-radius: 4px;
+  margin-top: 24px;
+}
+
+.bym-toggle__option {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--ink-5);
+  border-radius: 4px;
+  padding: 10px 0;
+  font-family: var(--font-wide);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.bym-toggle__option--active {
+  background: var(--ink-5);
+  color: var(--white-5);
+}
+
+/* Team dropdowns */
+
+.bym-fields {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.bym-field {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+}
+
+.bym-field__label {
+  display: block;
+  font-family: var(--font-wide);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 6px;
+}
+
+.bym-select {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: var(--white-5);
+  border: 1.5px solid var(--gray-2);
+  border-radius: 4px;
+  padding: 12px 12px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray-0);
+  text-align: left;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.bym-select__value--filled { color: var(--ink-5); }
+
+.bym-select__chevron {
+  flex-shrink: 0;
+  font-size: 10px;
+  color: var(--gray-0);
+  transition: transform 0.15s ease;
+}
+
+.bym-field.is-open .bym-select {
+  border-color: var(--ink-5);
+  box-shadow: 0 0 0 3px rgba(23, 23, 29, 0.08);
+}
+
+.bym-field.is-open .bym-select__chevron { transform: rotate(180deg); }
+
+.bym-panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: var(--white-5);
+  border: 1px solid var(--gray-3);
+  border-radius: 6px;
+  box-shadow: 0 16px 40px rgba(23,23,29,0.18);
+  z-index: 20;
+  display: none;
+  overflow: hidden;
+}
+
+.bym-field.is-open .bym-panel { display: block; }
+
+.bym-panel__search {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--gray-3);
+  padding: 10px 14px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--ink-5);
+  outline: none;
+}
+
+.bym-panel__list {
+  max-height: 236px;
+  overflow-y: auto;
+}
+
+.bym-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--gray-3);
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--ink-5);
+  text-align: left;
+  transition: background 0.1s ease;
+}
+
+.bym-option:last-child { border-bottom: none; }
+.bym-option:hover:not(.is-disabled) { background: #fafafb; }
+
+.bym-option__radio {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--ink-5);
+  position: relative;
+}
+
+.bym-option.is-selected .bym-option__radio { background: var(--ink-5); }
+
+.bym-option.is-selected .bym-option__radio::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: var(--white-5);
+}
+
+.bym-option.is-disabled {
+  color: var(--gray-2);
+  cursor: not-allowed;
+}
+
+.bym-option.is-disabled .bym-option__radio {
+  border-color: var(--gray-2);
+}
+
+.bym-option__empty {
+  padding: 16px 14px;
+  font-size: 13px;
+  color: var(--gray-0);
+  text-align: center;
+}
+
+/* Calculate button */
+
+.bym-calculate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 28px;
+  background: var(--ink-5);
+  color: var(--white-5);
+  border: none;
+  border-radius: 4px;
+  padding: 14px 0;
+  font-family: var(--font-wide);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.bym-calculate:hover:not(:disabled) { background: #2b2b33; }
+.bym-calculate:active:not(:disabled) { transform: scale(0.99); }
+
+.bym-calculate:disabled {
+  background: var(--gray-3);
+  color: var(--gray-0);
+  cursor: not-allowed;
+}
+
+/* ---- NCAA.com destination header (Flow 3) ---- */
+
+.ncaa-dest-header {
+  background: var(--ink-5);
+  color: #fff;
+}
+
+.ncaa-dest-header__eyebrow {
+  font-family: var(--font-wide);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+
+.ncaa-dest-header__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 640px) {
+  .bym-fields { flex-direction: column; }
+}

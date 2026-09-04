@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MML Prototype — Matchup Analysis Discoverability</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="css/styles.css" />
+<style>
+  body { background: radial-gradient(circle at 20% 20%, #0f2a52 0%, #0a0e1c 55%, #05070d 100%); min-height: 100vh; }
+  .launch-card { transition: transform .18s ease, box-shadow .18s ease; }
+  .launch-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,.35); }
+</style>
+</head>
+<body class="flex items-center justify-center px-6 py-16">
+  <div class="w-full max-w-4xl text-center">
+    <h1 class="type-display text-white text-[40px] md:text-[52px] mb-12">Matchup Analysis<br/>Discoverability</h1>
+
+    <div class="grid md:grid-cols-3 gap-6 text-left">
+      <a href="flow1.html" class="launch-card block bg-white rounded-[6px] p-6 border border-white/10">
+        <div class="state-pill state-pill--open mb-4"><span class="state-pill__dot"></span>Picks Open</div>
+        <div class="type-display text-[22px] text-[#17171d] mb-2">Flow 1 — MML Home</div>
+        <p class="text-[13px] text-[#464750] mb-4 leading-relaxed">
+          Brackets are still open. The widget invites fans to compare teams before making their pick.
+        </p>
+        <span class="btn-primary">Open Flow 1</span>
+      </a>
+
+      <a href="flow2.html" class="launch-card block bg-white rounded-[6px] p-6 border border-white/10">
+        <div class="state-pill state-pill--locked mb-4"><span class="state-pill__dot"></span>Picks Locked</div>
+        <div class="type-display text-[22px] text-[#17171d] mb-2">Flow 2 — MML Home</div>
+        <p class="text-[13px] text-[#464750] mb-4 leading-relaxed">
+          Brackets are locked and games are underway. The widget positions Matchup Analysis
+          as a game-preview tool.
+        </p>
+        <span class="btn-primary">Open Flow 2</span>
+      </a>
+
+      <a href="flow3.html" class="launch-card block bg-white rounded-[6px] p-6 border border-white/10">
+        <div class="state-pill mb-4" style="background:rgba(0,156,222,0.12); color:var(--accent-blue);"><span class="state-pill__dot" style="background:var(--accent-blue);"></span>Regular Season</div>
+        <div class="type-display text-[22px] text-[#17171d] mb-2">Flow 3 — NCAA.com Article</div>
+        <p class="text-[13px] text-[#464750] mb-4 leading-relaxed">
+          Outside Bracket Challenge Game entirely. A compact right-rail widget on an NCAA.com
+          article lets fans build their own men&rsquo;s or women&rsquo;s DI matchup from scratch.
+        </p>
+        <span class="btn-primary">Open Flow 3</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
